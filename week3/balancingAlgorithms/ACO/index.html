@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ant Simulation</title>
+</head>
+<body>
+    <div style="display: flex">
+        <div>
+            <canvas id="grid" height="600" width="600"></canvas>
+            <button id="reload-button">Reload Simulation</button>
+        </div>
+        <div class="scrollable-div">
+            <table>
+                <!--            <caption>Ants State</caption>-->
+                <thead>
+                <tr>
+                    <th>Ant</th>
+                    <th>Has Food</th>
+                    <th>Last Signal</th>
+                    <th>Orientation</th>
+                </tr>
+                </thead>
+                <tbody id="antTableBody">
+<!--                <tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr><tr>-->
+<!--                    <td>Ant at (2, 2})</td>-->
+<!--                    <td>true</td>-->
+<!--                    <td>0.853</td>-->
+<!--                    <td>2032</td>-->
+<!--                </tr>-->
+
+
+                <!-- Table content will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+<script src="ACO.js"></script>
+<script>
+    document.getElementById("reload-button").addEventListener("click", function () {
+        location.reload();
+    });
+</script>
+</body>
+</html>
+

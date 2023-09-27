@@ -1,0 +1,45 @@
+const countApples = (str) => {
+    const result = {};
+    let count = 0;
+    let name = "";
+    let at = '@'.charCodeAt(0);
+    let devider = '/'.charCodeAt(0);
+    let space = ' '.charCodeAt(0);
+    let isName = false;
+    let isApple = false;
+
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+
+        if (char === at) {
+            isName = true;
+            i++; // Пропускаємо '@'
+        }
+        if (isName) {
+            if (char === space || char === devider) {
+                isName = false;
+            } else {
+                name += String.fromCharCode(str.charCodeAt(i));
+                name = name.toLowerCase();
+                continue;
+            }
+        }
+
+        if (str[i] === 'a' && str[i + 4] === 'e') {
+            count++;
+            // continue;
+        }
+
+        if (name && count) {
+            result[name] = count;
+            count = 0;
+            name = "";
+        }
+
+    }
+
+    return result;
+}
+
+const text = '<@Kate />:apple: <@Max/><@alisa /> :like: received:apple::apple:';
+console.log(countApples(text));

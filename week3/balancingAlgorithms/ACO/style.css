@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #ffffff; /* Background color for the grid canvas */
+    border: #007bff 1px solid;
+}
+
+#reload-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+div {
+    margin: 10px auto;
+}
+
+.scrollable-div {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+}
+table, th, td {
+    border: blue 1px solid;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    color: white;
+    background: #007bff;
+}
+
+.has-food {
+    color: #41d941;
+    font-weight: bold;
+}
+
+.no-food {
+    color: red;
+    font-weight: bold;
+
+}
+
+

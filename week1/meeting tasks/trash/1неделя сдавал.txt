@@ -1,0 +1,135 @@
+// Object.prototype.valueOf = () => {
+//     console.log( 'obj_valueOf')
+//     return Math.random() * 1000
+// }
+
+// Object.prototype.toString = () => {
+//     console.log( 'obj_toString')
+//     return 'abcd'
+// }
+
+// Date.prototype.valueOf = () => {
+//     console.log('date_valueOf')
+//     return Math.random() * 1000
+// }
+
+// Date.prototype.toString = () => {
+//     console.log('date_toString')
+//     return 'abcd'
+// }
+
+// const obj = {}
+// const obj2 = {}
+// const date = new Date()
+// const date2 = new Date()
+
+// console.log("" + obj + obj2, date + date2, obj2 + date2)
+
+// var anyString = 'Mozilla';
+
+// // Отобразит 'Moz'
+// console.log(anyString.substring(0, 3));
+// console.log(anyString.substring(3, 0));
+
+// console.log(anyString)
+
+// const str = 'Hello, World!';
+// const newStr = str.replace(/(\\w+)/g, (match, word) => word.toUpperCase());
+// console.log(newStr); // Вывод: 'HELLO, WORLD!'
+
+// const text = 'My wallet balance is 14690 USDT'
+// const getNum = (str) => {
+//     let numStr = 0;
+//     let zero = '0'.charCodeAt(0)
+//     let nine = '9'.charCodeAt(0)
+    
+//     // console.log(zero, nine)
+//     for (let i = 0; i < text.length ; i++) {
+//         const char = text.charCodeAt(i)
+//         // console.log(char)
+        
+//         if (char >= zero && char <= nine) {
+//             const digitNum = char - zero
+//             // console.log(digitNum)
+//             numStr = numStr * 10 + digitNum
+//             // console.log(numStr)
+//         } 
+//     }
+    
+//     return numStr
+// }
+const text2 = 'My wallet balance is 14690 USDT. I paid 750 USDT for plane tickets and 921 USDT for a flat'
+
+const getNum = (str) => {
+    let numStr = 0;
+    let diff = 0;
+    let isNun = false;
+    let firstNum = true;
+    let zero = '0'.charCodeAt(0)
+    let nine = '9'.charCodeAt(0)
+
+    // console.log(zero, nine)
+    for (let i = 0; i < str.length ; i++) {
+        const char = str.charCodeAt(i)
+        // console.log(char)
+        
+        if (char >= zero && char <= nine) {
+            const digitNum = char - zero
+            // console.log(digitNum)
+            numStr = numStr * 10 + digitNum
+            isNun = true
+            // console.log(numStr)
+        } else {
+          if (isNun) {
+              if (firstNum) {
+                  diff = numStr
+                  firstNum = false
+              } else {
+                  diff -= numStr
+              }
+              numStr = 0
+              isNun = false
+              }
+        }
+    }
+    return diff
+}
+
+console.log(getNum(text2))
+
+// const text2 = 'My wallet balance is 14690 USDT. I paid 750 USDT for plane tickets and 921 USDT for a flat';
+
+// const getNum = (str) => {
+//     let numStr = 0;
+//     let diff = 0;
+//     let isNum = false;
+//     let firstNum = true;
+//     let zero = '0'.charCodeAt(0);
+//     let nine = '9'.charCodeAt(0);
+
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str.charCodeAt(i);
+
+//         if (char >= zero && char <= nine) {
+//             const digitNum = char - zero;
+//             numStr = numStr * 10 + digitNum;
+//             isNum = true;
+//         } else {
+//             if (isNum) {
+//                 if (firstNum) {
+//                     diff = numStr;
+//                     firstNum = false;
+//                 } else {
+//                     diff -= numStr;
+//                 }
+//                 numStr = 0;
+//                 isNum = false;
+//             }
+//         }
+//     }
+    
+//     return diff + numStr;
+// };
+
+// console.log(getNum(text2)); // 13019
+
