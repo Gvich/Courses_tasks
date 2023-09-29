@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window 1</title>
+</head>
+<body>
+<h1>Окно 1</h1>
+<button onclick="sendMessage()">Отправить сообщение</button>
+
+<script>
+    // Создаем именованный канал с именем "myChannel"
+    const channel = new BroadcastChannel('myChannel');
+
+    // Обработчик для получения сообщений из канала
+    channel.onmessage = function(event) {
+        console.log('Окно 1 получило сообщение:', event.data);
+    };
+
+    // Функция для отправки сообщения в канал
+    function sendMessage() {
+        const message = { text: 'Привет из окна 1!' };
+        channel.postMessage(message);
+    }
+</script>
+</body>
+</html>

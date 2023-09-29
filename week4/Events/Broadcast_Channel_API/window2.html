@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window 2</title>
+</head>
+<body>
+<h1>Окно 2</h1>
+
+<script>
+    // Создаем именованный канал с тем же именем "myChannel"
+    const channel = new BroadcastChannel('myChannel');
+
+    // Обработчик для получения сообщений из канала
+    channel.onmessage = function (event) {
+        console.log('Окно 2 получило сообщение:', event.data);
+
+        const para = document.createElement("p");
+        para.textContent = event.data.text;
+        // console.log()
+        document.body.appendChild(para);
+    };
+</script>
+</body>
+</html>

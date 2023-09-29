@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Window</title>
+</head>
+<body>
+<h1>Родительское окно</h1>
+<button onclick="openIframeWindow()">Открыть iframe в отдельном окне</button>
+
+<script>
+    function openIframeWindow() {
+        // Открываем новое окно с iframe.html
+        const newWindow = window.open('iframe.html', 'Iframe Window', 'width=300,height=200');
+
+        // Добавляем обработчик сообщений для нового окна
+        newWindow.addEventListener('message', function(event) {
+            if (event.origin === 'http://localhost:63342') {
+                console.log('Получено сообщение от iframe в отдельном окне:', event.data);
+            }
+        });
+    }
+</script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Parent Window</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Родительское окно</h1>-->
+<!--<iframe src="iframe.html" id="myIframe" width="300" height="200"></iframe>-->
+
+<!--<script>-->
+<!--    const iframe = document.getElementById('myIframe');-->
+
+<!--    // Обработчик для получения сообщений от iframe-->
+<!--    window.addEventListener('message', function (event) {-->
+<!--        if (event.origin === 'http://localhost:63342') { // Укажите здесь домен iframe.html-->
+<!--            console.log('Получено сообщение от iframe:', event.data);-->
+<!--        }-->
+<!--    });-->
+
+<!--    // Функция для отправки сообщения в iframe-->
+<!--    function sendMessageToIframe() {-->
+<!--        const message = {text: 'Привет, iframe!'};-->
+<!--        iframe.contentWindow.postMessage(message, 'http://localhost:63342'); // Укажите здесь домен iframe.html-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

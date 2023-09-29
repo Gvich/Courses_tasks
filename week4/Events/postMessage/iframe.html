@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFrame Window</title>
+</head>
+<body>
+<h1>IFrame</h1>
+<button onclick="sendMessageToParent()">Отправить сообщение в родительское окно</button>
+
+<script>
+    // Функция для отправки сообщения в родительское окно
+    function sendMessageToParent() {
+        const message = {text: 'Привет, родительское окно!'};
+        window.parent.postMessage(message, 'http://localhost:63342'); // Укажите здесь домен parent.html
+    }
+</script>
+</body>
+</html>
